@@ -2,6 +2,24 @@
 
 Flujo simplificado basado en specs de un solo archivo.
 
+## Instalación en un proyecto
+Desde la raíz de tu proyecto:
+```bash
+curl -fsSL https://raw.githubusercontent.com/victorbrperez/ai-sldc/main/install.sh | bash
+```
+Actualizar el workflow (solo `.agents/`, nunca `docs/`):
+```bash
+curl -fsSL https://raw.githubusercontent.com/victorbrperez/ai-sldc/main/install.sh | bash -s -- --update
+```
+Invocación local (clon del repo):
+```bash
+./install.sh --target /ruta/a/tu-proyecto
+./install.sh --update --target /ruta/a/tu-proyecto
+AI_SLDC_REPO=/ruta/a/ai-sldc ./install.sh --target /ruta/a/tu-proyecto  # probar cambios locales
+```
+Opciones: `--ref <tag|branch>` para fijar versión, `--target <dir>` para otro destino.
+La instalación no sobrescribe archivos existentes.
+
 ## Entradas principales
 - `/init-project`: completar los docs de contexto (una sola vez)
 - `/feature`: crear nueva funcionalidad
