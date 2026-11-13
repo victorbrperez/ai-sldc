@@ -19,8 +19,9 @@ Regla estricta: si la spec no está en `approved`, `/implement` no se ejecuta.
 - `.agents/commands/`: prompts operativos
 - `.agents/skills/<nombre>/SKILL.md`: capacidades reutilizables
 - `.agents/templates/spec-template.md`: plantilla única
-- `specs/active`: specs en curso
-- `specs/archive`: historial cerrado
+- `docs/project.md`, `docs/architecture.md`, `docs/tech-stack.md`, `docs/conventions.md`: contexto del proyecto (plantillas)
+- `docs/specs/active`: specs en curso
+- `docs/specs/archive`: historial cerrado
 
 ## Flujo recomendado
 1. Ejecutar `/feature` o `/change` o `/bugfix`

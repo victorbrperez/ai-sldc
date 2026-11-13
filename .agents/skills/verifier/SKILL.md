@@ -5,6 +5,8 @@ description: Valida cumplimiento funcional y no regresión de una spec implement
 
 # Skill: verifier
 
+Contexto: leer `docs/project.md`, `docs/architecture.md`, `docs/tech-stack.md` y `docs/conventions.md` cuando aplique; ignorar los que estén sin completar.
+
 Objetivo:
 Validar cumplimiento funcional y no regresión.
 

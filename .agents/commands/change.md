@@ -1,9 +1,10 @@
 Objetivo: preparar un cambio sobre funcionalidad existente y producir una spec.
+Contexto: leer `docs/project.md`, `docs/architecture.md`, `docs/tech-stack.md` y `docs/conventions.md` cuando aplique; ignorar los que estén sin completar.
 
 Proceso:
 1) Entrevista orientada a estado actual vs estado deseado.
 2) No implementes nada.
-3) Genera spec en `specs/active/<yyyy-mm-dd>-change-<slug>.md`.
+3) Genera spec en `docs/specs/active/<yyyy-mm-dd>-change-<slug>.md`.
 4) Asigna:
    - `type: change`
    - `status: draft` (o `ready_for_review` si completa)

@@ -5,6 +5,8 @@ description: Obtiene datos críticos mínimos con preguntas cortas antes de crea
 
 # Skill: intake
 
+Contexto: leer `docs/project.md`, `docs/architecture.md`, `docs/tech-stack.md` y `docs/conventions.md` cuando aplique; ignorar los que estén sin completar.
+
 Objetivo:
 Obtener datos críticos mínimos con preguntas cortas y precisas.
 

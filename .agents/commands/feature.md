@@ -1,9 +1,10 @@
 Objetivo: iniciar una nueva funcionalidad y producir una spec en un único archivo.
+Contexto: leer `docs/project.md`, `docs/architecture.md`, `docs/tech-stack.md` y `docs/conventions.md` cuando aplique; ignorar los que estén sin completar.
 
 Proceso:
 1) Ejecuta entrevista corta para completar contexto faltante.
 2) No implementes nada.
-3) Genera spec en `specs/active/<yyyy-mm-dd>-feature-<slug>.md` usando `.agents/templates/spec-template.md`.
+3) Genera spec en `docs/specs/active/<yyyy-mm-dd>-feature-<slug>.md` usando `.agents/templates/spec-template.md`.
 4) Asigna:
    - `type: feature`
    - `status: draft` (o `ready_for_review` si está completa)
