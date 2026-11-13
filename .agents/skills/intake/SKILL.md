@@ -5,7 +5,8 @@ description: Obtiene datos críticos mínimos con preguntas cortas antes de crea
 
 # Skill: intake
 
-Contexto: leer `docs/project.md`, `docs/architecture.md`, `docs/tech-stack.md` y `docs/conventions.md` cuando aplique; ignorar los que estén sin completar.
+Contexto: leer `docs/project.md`, `docs/architecture.md`, `docs/tech-stack.md` y `docs/conventions.md`.
+Paso 0: si alguno conserva placeholders `<...>` (sin completar), detente sin generar nada y responde: "Falta contexto del proyecto. Ejecuta `/init-project` primero".
 
 Objetivo:
 Obtener datos críticos mínimos con preguntas cortas y precisas.

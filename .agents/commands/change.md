@@ -1,5 +1,6 @@
 Objetivo: preparar un cambio sobre funcionalidad existente y producir una spec.
-Contexto: leer `docs/project.md`, `docs/architecture.md`, `docs/tech-stack.md` y `docs/conventions.md` cuando aplique; ignorar los que estén sin completar.
+Contexto: leer `docs/project.md`, `docs/architecture.md`, `docs/tech-stack.md` y `docs/conventions.md`.
+Paso 0: si alguno conserva placeholders `<...>` (sin completar), detente sin generar nada y responde: "Falta contexto del proyecto. Ejecuta `/init-project` primero".
 
 Proceso:
 1) Entrevista orientada a estado actual vs estado deseado.

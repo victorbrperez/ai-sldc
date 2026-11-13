@@ -3,6 +3,7 @@
 Flujo simplificado basado en specs de un solo archivo.
 
 ## Entradas principales
+- `/init-project`: completar los docs de contexto (una sola vez)
 - `/feature`: crear nueva funcionalidad
 - `/change`: modificar funcionalidad existente
 - `/bugfix`: diagnosticar y corregir defectos (vía spec)
@@ -19,11 +20,12 @@ Regla estricta: si la spec no está en `approved`, `/implement` no se ejecuta.
 - `.agents/commands/`: prompts operativos
 - `.agents/skills/<nombre>/SKILL.md`: capacidades reutilizables
 - `.agents/templates/spec-template.md`: plantilla única
-- `docs/project.md`, `docs/architecture.md`, `docs/tech-stack.md`, `docs/conventions.md`: contexto del proyecto (plantillas)
+- `docs/project.md`, `docs/architecture.md`, `docs/tech-stack.md`, `docs/conventions.md`: contexto del proyecto (se completan con `/init-project`)
 - `docs/specs/active`: specs en curso
 - `docs/specs/archive`: historial cerrado
 
 ## Flujo recomendado
+0. Ejecutar `/init-project` (una sola vez; `/feature`, `/change` y `/bugfix` se detienen si falta contexto)
 1. Ejecutar `/feature` o `/change` o `/bugfix`
 2. Revisar y completar spec (`draft`/`ready_for_review`)
 3. Aprobar con `/spec-approve`
