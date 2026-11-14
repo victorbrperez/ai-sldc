@@ -35,8 +35,7 @@ La instalación no sobrescribe archivos existentes.
 Regla estricta: si la spec no está en `approved`, `/implement` no se ejecuta.
 
 ## Estructura
-- `.agents/commands/`: prompts operativos
-- `.agents/skills/<nombre>/SKILL.md`: capacidades reutilizables
+- `.agents/commands/`: prompts operativos, autocontenidos
 - `.agents/templates/spec-template.md`: plantilla única
 - `docs/project.md`, `docs/architecture.md`, `docs/tech-stack.md`, `docs/conventions.md`: contexto del proyecto (se completan con `/init-project`)
 - `docs/specs/active`: specs en curso
@@ -47,19 +46,18 @@ Regla estricta: si la spec no está en `approved`, `/implement` no se ejecuta.
 1. Ejecutar `/feature` o `/change` o `/bugfix`
 2. Revisar y completar spec (`draft`/`ready_for_review`)
 3. Aprobar con `/spec-approve`
-4. Ejecutar `/implement`
-5. Archivar spec al cierre
+4. Ejecutar `/implement` (incluye crear rama, implementar, validar, registrar PR y archivar al confirmarse el merge)
 
 ## Adaptación a otros agentes
 `.agents/` es la fuente única. Si un agente no lee esa ruta, **copia** (no enlaces) los archivos a su ubicación.
 
-| Agente | Skills | Commands |
-|---|---|---|
-| Codex | `.agents/skills/` (nativo) | Solo a nivel usuario: `~/.codex/prompts/` |
-| pi | `.agents/skills/` o `.pi/skills/` | Copiar a `.pi/prompts/` |
-| Goose | `.agents/skills/` o `.goose/skills/` | Convertir a recipes (YAML) |
-| Claude Code | Copiar a `.claude/skills/` | Copiar a `.claude/commands/` |
-| GitHub Copilot | Copiar a `.github/skills/` | Copiar a `.github/prompts/` como `<nombre>.prompt.md` |
+| Agente | Commands |
+|---|---|
+| Codex | Solo a nivel usuario: `~/.codex/prompts/` |
+| pi | Copiar a `.pi/prompts/` |
+| Goose | Convertir a recipes (YAML) |
+| Claude Code | Copiar a `.claude/commands/` |
+| GitHub Copilot | Copiar a `.github/prompts/` como `<nombre>.prompt.md` |
 
 Notas:
 - No uses symlinks: fallan en Windows y en algunos zips o CI.
