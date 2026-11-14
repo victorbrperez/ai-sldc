@@ -55,4 +55,6 @@ else
   copy_no_clobber ".agents"
   copy_no_clobber "docs"
   echo "Instalado. Siguiente paso: ejecutar /init-project en tu agente."
+  echo "Si usas Claude Code, opencode o Goose: ejecuta .agents/scripts/sync-commands.sh"
+  echo "para generar sus comandos nativos a partir de .agents/commands/."
 fi

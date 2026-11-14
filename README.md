@@ -49,17 +49,26 @@ Regla estricta: si la spec no está en `approved`, `/implement` no se ejecuta.
 4. Ejecutar `/implement` (incluye crear rama, implementar, validar, registrar PR y archivar al confirmarse el merge)
 
 ## Adaptación a otros agentes
-`.agents/` es la fuente única. Si un agente no lee esa ruta, **copia** (no enlaces) los archivos a su ubicación.
+`.agents/commands/` es la fuente única. Para generar los comandos nativos de Claude Code, opencode y Goose:
+```bash
+.agents/scripts/sync-commands.sh
+```
+Esto crea (sobrescribiendo en cada ejecución, son archivos derivados):
 
+| Agente | Destino | Formato |
+|---|---|---|
+| Claude Code | `.claude/commands/<nombre>.md` | copia literal del `.md` |
+| opencode | `.opencode/commands/<nombre>.md` | copia literal del `.md` (mismo formato que Claude Code: markdown plano, sin frontmatter) |
+| Goose | `.goose/recipes/<nombre>.yaml` | recipe YAML generada (`title`/`description`/`instructions`); regístrala como slash command en tu `config.yaml` si quieres invocarla por nombre |
+
+Otros agentes (fuera del alcance de este script):
 | Agente | Commands |
 |---|---|
 | Codex | Solo a nivel usuario: `~/.codex/prompts/` |
 | pi | Copiar a `.pi/prompts/` |
-| Goose | Convertir a recipes (YAML) |
-| Claude Code | Copiar a `.claude/commands/` |
-| GitHub Copilot | Copiar a `.github/prompts/` como `<nombre>.prompt.md` |
 
 Notas:
 - No uses symlinks: fallan en Windows y en algunos zips o CI.
-- Añade las rutas copiadas (`.claude/`, `.pi/`, etc.) al `.gitignore` para no duplicar fuentes.
+- Añade las rutas generadas (`.claude/`, `.opencode/`, `.goose/`, `.pi/`, etc.) al `.gitignore` para no duplicar fuentes.
+- GitHub Copilot (CLI) no tiene mecanismo de comandos/prompts custom a día de hoy (la extensión `gh-copilot` fue deprecada en oct-2025; el nuevo `copilot` CLI standalone no soporta prompt files) — queda fuera de la compatibilidad de este proyecto.
 - Verifica las rutas en la documentación oficial de cada agente, pueden cambiar.
